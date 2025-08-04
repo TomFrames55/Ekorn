@@ -1,11 +1,11 @@
 <script lang="ts">
+  import { hasPassed } from "../../utils";
+
   export let name: string;
   export let age: number;
   export let averageScore: number;
   export let activeLabel: "Yes" | "No";
   export let id: string;
-
-  const hasPassed = (score: number) => (score >= 70 ? "Yes" : "No");
 </script>
 
 <div class="card">
