@@ -1,7 +1,4 @@
 <script lang="ts">
-  import Hello from './lib/components/Hello.svelte';
-  import DataPreview from './lib/components/DataPreview.svelte';
-  import { studentsData } from './lib/data';
 
   type Student = {
     id: string;
@@ -11,32 +8,11 @@
     activeLabel: 'Yes' | 'No';
   };
 
-  // Replace mock example objects with the actual data from the studentsData array
-  const students: Student[] = [
-    {
-      id: '1',
-      name: 'Mary Example',
-      age: 50,
-      activeLabel: 'Yes',
-      averageScore: 10,
-    },
-    {
-      id: '2',
-      name: 'Jade Test',
-      age: 21,
-      activeLabel: 'No',
-      averageScore: 10,
-    },
-  ];
+  const students: Student[] = [];
 </script>
 
 <main>
-  <!-- Delete <Hello> -->
-  <Hello></Hello>
-
-  <!-- The list of students -->
   {#each students as student}
-    <!-- Example content to showcase Svelte — replace with your own template  -->
     <div>
       <div>{student.name.toUpperCase()}</div>
 
@@ -52,9 +28,6 @@
       Active: {student.activeLabel}
     </div>
   {/each}
-
-  <!-- Delete <DataPreview> -->
-  <DataPreview value={studentsData}></DataPreview>
 </main>
 
 <style>
