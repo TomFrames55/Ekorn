@@ -21,6 +21,7 @@
 </script>
 
 <main>
+  <h1>Students</h1>
   {#each students as student}
     <StudentCard
       name={student.name}
@@ -34,6 +35,15 @@
 
 <style>
   main {
-    padding: 30px;
+    padding: 4rem 10rem;
+    background-color: #f5f0ea;
+    font-family: system-ui, sans-serif;
+    color: #352f3b;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
 </style>
