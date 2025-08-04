@@ -32,4 +32,24 @@
     margin: 0.3rem 0;
     font-size: 0.95rem;
   }
+
+  h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+  }
+
+  span {
+    color: #6b646e;
+    font-weight: 500;
+  }
+
+  strong {
+    font-weight: 700;
+  }
 </style>

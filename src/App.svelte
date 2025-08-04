@@ -22,15 +22,17 @@
 
 <main>
   <h1>Students</h1>
-  {#each students as student}
-    <StudentCard
-      name={student.name}
-      age={student.age}
-      averageScore={student.averageScore}
-      activeLabel={student.activeLabel}
-      id={student.id}
-    />
-  {/each}
+  <div class="grid">
+    {#each students as student}
+      <StudentCard
+        name={student.name}
+        age={student.age}
+        averageScore={student.averageScore}
+        activeLabel={student.activeLabel}
+        id={student.id}
+      />
+    {/each}
+  </div>
 </main>
 
 <style>
@@ -41,9 +43,22 @@
     color: #352f3b;
   }
 
+  @media (max-width: 767px) {
+    main {
+      padding: 3rem 7rem;
+    }
+  }
+
   h1 {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1024px;
   }
 </style>
