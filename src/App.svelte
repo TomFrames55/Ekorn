@@ -1,14 +1,22 @@
 <script lang="ts">
+  import { studentsData } from "./lib/data";
+  import { calculateAge, calculateAverageScore } from "./utils";
 
   type Student = {
     id: string;
     name: string;
     age: number;
     averageScore: number;
-    activeLabel: 'Yes' | 'No';
+    activeLabel: "Yes" | "No";
   };
 
-  const students: Student[] = [];
+  const students: Student[] = studentsData.map((student) => ({
+    id: student.id.toString(),
+    name: `${student.firstName} ${student.lastName}`,
+    age: calculateAge(student.birthdate),
+    averageScore: calculateAverageScore(student.scores),
+    activeLabel: student.isActive ? "Yes" : "No",
+  }));
 </script>
 
 <main>
