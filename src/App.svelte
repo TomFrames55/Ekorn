@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { StudentCard } from "./lib/components";
   import { studentsData } from "./lib/data";
   import { calculateAge, calculateAverageScore } from "./utils";
 
@@ -21,20 +22,13 @@
 
 <main>
   {#each students as student}
-    <div>
-      <div>{student.name.toUpperCase()}</div>
-
-      <p>
-        {#if student.age > 25}
-          Mature Student - {student.age} years old
-        {:else}
-          Young Student - {student.age} years old
-        {/if}
-      </p>
-
-      Avg score: {student.averageScore}
-      Active: {student.activeLabel}
-    </div>
+    <StudentCard
+      name={student.name}
+      age={student.age}
+      averageScore={student.averageScore}
+      activeLabel={student.activeLabel}
+      id={student.id}
+    />
   {/each}
 </main>
 
