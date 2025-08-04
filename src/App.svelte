@@ -21,32 +21,43 @@
 </script>
 
 <main>
-  <h1>Students</h1>
-  <div class="grid">
-    {#each students as student}
-      <StudentCard
-        name={student.name}
-        age={student.age}
-        averageScore={student.averageScore}
-        activeLabel={student.activeLabel}
-        id={student.id}
-      />
-    {/each}
+  <div class="container">
+    <h1>Students</h1>
+    <div class="grid">
+      {#each students as student}
+        <StudentCard
+          name={student.name}
+          age={student.age}
+          averageScore={student.averageScore}
+          activeLabel={student.activeLabel}
+          id={student.id}
+        />
+      {/each}
+    </div>
   </div>
 </main>
 
 <style>
   main {
-    padding: 4rem 10rem;
+    align-items: center;
     background-color: #f5f0ea;
-    font-family: system-ui, sans-serif;
     color: #352f3b;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 4rem 8rem;
   }
 
   @media (max-width: 767px) {
     main {
-      padding: 3rem 7rem;
+      padding: 3rem 6rem;
     }
+  }
+
+  .container {
+    max-width: 1024px;
+    width: 100%;
   }
 
   h1 {
