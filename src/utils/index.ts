@@ -39,5 +39,5 @@ export function calculateAverageScore(scores: Scores): number {
  * @returns "Yes" if the score is 50 or higher, otherwise "No".
  */
 export function hasPassed(score: number): "Yes" | "No" {
-  return score >= 50 ? "Yes" : "No";
+  return score >= 75 ? "Yes" : "No";
 }
