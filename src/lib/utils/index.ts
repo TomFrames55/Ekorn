@@ -36,7 +36,7 @@ export function calculateAverageScore(scores: Scores): number {
  * Determines whether a student has passed based on their average score.
  *
  * @param score - The student's average score as a number.
- * @returns "Yes" if the score is 50 or higher, otherwise "No".
+ * @returns "Yes" if the score is 75 or higher, otherwise "No".
  */
 export function hasPassed(score: number): "Yes" | "No" {
   return score >= 75 ? "Yes" : "No";
