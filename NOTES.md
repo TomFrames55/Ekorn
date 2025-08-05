@@ -25,14 +25,14 @@ This assessment was approached in two phases: **Data Transformation** and **UI I
      - `Grid.svelte`: for the responsive layout
      - `Header.svelte`: for controls (sorting/filtering)
 
-## Assumptions Made
+## Assumptions
 
 - The passing score was defined as `>= 75`, to demonstrate the functionality of the "Passed" filter control.
 - Sorting and filtering controls were interpreted as UI-orientated rather than URL/query param-based.
 - The `id` field, though numeric in `studentsData`, was typed as a string in the `Student` model, and thus converted accordingly.
 - The sorting keys were limited to `"id" | "name" | "age" | "averageScore"`.
 
-## Additional Features Implemented
+## Additional Features
 
 - **Sorting**: Students can be sorted by `ID`, `Name`, `Age`, or `Average Score`.
 - **Filtering**: Two filters were added:
@@ -44,10 +44,10 @@ This assessment was approached in two phases: **Data Transformation** and **UI I
   - Form controls use labels for better readability.
 - **Responsive Design**:
   - Layout adjusts from 3-column to 1-column as screen width scales down.
-- **Typed Utility Functions**:
+- **Utilities**:
   - `calculateAge`, `calculateAverageScore`, and `hasPassed` are type-safe and documented with JSDoc.
 
-## Project Structure Summary
+## Project Structure
 
 ```bash
 src/
