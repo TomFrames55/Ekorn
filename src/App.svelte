@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { StudentCard } from "./lib/components";
+  import { Card, Header } from "./lib/components";
   import { studentsData } from "./lib/data";
   import "./styles/index.css";
   import { calculateAge, calculateAverageScore, hasPassed } from "./utils";
@@ -20,9 +20,21 @@
     activeLabel: student.isActive ? "Yes" : "No",
   }));
 
-  let sortKey: keyof Student = "id";
+  let sortKey: "id" | "name" | "age" | "averageScore" = "id";
   let filterActiveOnly = false;
   let filterPassedOnly = false;
+
+  function handleSortKeyChange(key: typeof sortKey) {
+    sortKey = key;
+  }
+
+  function toggleActive(value: boolean) {
+    filterActiveOnly = value;
+  }
+
+  function togglePassed(value: boolean) {
+    filterPassedOnly = value;
+  }
 
   $: filteredStudents = students
     .filter((s) => !filterActiveOnly || s.activeLabel === "Yes")
@@ -46,31 +58,17 @@
 
 <main>
   <div class="container">
-    <div class="header">
-      <h1>Students</h1>
-      <div style="display: flex; flex-direction: row; gap: 1rem;">
-        <label>
-          Sort by:
-          <select bind:value={sortKey}>
-            <option value="id">ID</option>
-            <option value="name">Name</option>
-            <option value="age">Age</option>
-            <option value="averageScore">Average Score</option>
-          </select>
-        </label>
-        <label>
-          <input type="checkbox" bind:checked={filterActiveOnly} />
-          Active
-        </label>
-        <label>
-          <input type="checkbox" bind:checked={filterPassedOnly} />
-          Passed
-        </label>
-      </div>
-    </div>
+    <Header
+      {sortKey}
+      {filterActiveOnly}
+      {filterPassedOnly}
+      onSortKeyChange={handleSortKeyChange}
+      onToggleActive={toggleActive}
+      onTogglePassed={togglePassed}
+    />
     <div class="grid">
       {#each filteredStudents as student}
-        <StudentCard
+        <Card
           name={student.name}
           age={student.age}
           averageScore={student.averageScore}
@@ -81,15 +79,3 @@
     </div>
   </div>
 </main>
-
-<style>
-  .header {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-</style>

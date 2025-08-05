@@ -20,11 +20,6 @@ main {
   width: 100%;
 }
 
-h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
