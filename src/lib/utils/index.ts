@@ -1,4 +1,4 @@
-import type { Scores } from "../lib/data";
+import type { Scores } from "../data";
 
 /**
  * Calculates the age based on a birthdate string.

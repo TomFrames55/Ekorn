@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Card, Header } from "./lib/components";
+  import { Card, Grid, Header } from "./lib/components";
   import { studentsData } from "./lib/data";
+  import { calculateAge, calculateAverageScore, hasPassed } from "./lib/utils";
   import "./styles/index.css";
-  import { calculateAge, calculateAverageScore, hasPassed } from "./utils";
 
   type Student = {
     id: string;
@@ -66,7 +66,7 @@
       onToggleActive={toggleActive}
       onTogglePassed={togglePassed}
     />
-    <div class="grid">
+    <Grid>
       {#each filteredStudents as student}
         <Card
           name={student.name}
@@ -76,6 +76,6 @@
           id={student.id}
         />
       {/each}
-    </div>
+    </Grid>
   </div>
 </main>

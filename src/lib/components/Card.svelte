@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { hasPassed } from "../../utils";
+  import { hasPassed } from "../utils";
 
   export let name: string;
   export let age: number;
